@@ -15,9 +15,9 @@ function Box(props) {
         cursor: 'pointer'
     }
 
-    console.log(filled)
+    // console.log(filled)
     return ( 
-        <div className="box" style={style} onClick={changeColor}>
+        <div className="box" style={style} onClick={props.click}>
             
         </div>
      );
