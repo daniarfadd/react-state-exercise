@@ -3,22 +3,15 @@ import React, { useState } from 'react';
 
 function Box(props) {
 
-   
-    const [filled, setFilled] = useState(props.filled);
-    
-    function changeColor() {
-        setFilled(prevFilledState => !prevFilledState);
-    }
-
     const style = {
-        backgroundColor: filled ? 'green' : '#fff',
-        cursor: 'pointer'
+        backgroundColor: props.filled ? 'green' : '#fff',
+        cursor: 'pointer',
+        color: props.filled ? "aliceblue" : "black"
     }
 
-    // console.log(filled)
     return ( 
-        <div className="box" style={style} onClick={props.click}>
-            
+        <div className="box" style={style} onClick={() => props.click(props.id)}>
+            <h3>This is Box Number {props.id}</h3>
         </div>
      );
 }

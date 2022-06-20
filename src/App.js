@@ -8,15 +8,37 @@ function App() {
 
   const [boxes, setBoxes] = useState(boxData);
 
-  // function handleClick(id) {
-  //   setBoxes()
-  // }
+ 
   
   // const objectBox = boxes.map(box => box.on)
   // console.log(objectBox)
-  function klik(){
-    console.log("Box Clicked")
+
+  // this is a function that runs when the component is clicked
+  function klik(id){
+    // console.log(id)
+
+    setBoxes(prevBoxesState => {
+      let newBoxes = []
+      for(let i = 0; i < prevBoxesState.length; i++){
+        let currentBox = prevBoxesState[i]
+        if(currentBox.id === id) {
+          let updatedBox = {...currentBox, on: !currentBox.on}
+          newBoxes.push(updatedBox)
+        } else{
+          newBoxes.push(currentBox)
+        }
+      }
+      return newBoxes
+    })
   }
+
+
+// to see if the state is changing
+ useEffect(() =>
+ console.log(boxes),[boxes]
+ )
+
+  
 
   const boxElement = boxes.map(box => (
     <Box 
