@@ -3,7 +3,7 @@
   padding: 50px;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 13px;
 }
 
 .box{
@@ -11,4 +11,5 @@
   height: 200px;
   border: 2px solid black;
   display: inline-block;
+  min-width: 150px;
 }

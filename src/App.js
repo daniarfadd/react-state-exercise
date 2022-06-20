@@ -8,10 +8,12 @@ function App() {
 
   const [boxes, setBoxes] = useState(boxData);
 
-
+  // function handleClick(id) {
+  //   setBoxes()
+  // }
   
   const boxElement = boxes.map(box => (
-    <Box key={box.id} filled={box.on}/>
+    <Box key={box.id} id={box.id} filled={box.on}/>
   ))
 
   return (
