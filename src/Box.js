@@ -1,7 +1,7 @@
 function Box(props) {
 
     const style = {
-        backgroundColor: "green"
+        backgroundColor: props.filled ? 'green' : '#fff',
     }
 
     return ( 
